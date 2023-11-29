@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Index</h1>
+<ul>
+    <li><a href="{% url 'myapp:v2checkbox' %}">V2 Checkbox (no CSP)</a></li>
+    <li><a href="{% url 'myapp:v2checkbox_w_csp' %}">V2 Checkbox (w CSP)</a></li>
+    <li><a href="{% url 'myapp:v2invisible' %}">V2 Invisible (no CSP)</a></li>
+    <li><a href="{% url 'myapp:v2invisible_w_csp' %}">V2 Invisible (w CSP)</a></li>
+    <li><a href="{% url 'myapp:v3' %}">V3 (no CSP)</a></li>
+    <li><a href="{% url 'myapp:v3_w_csp' %}">V3 (w CSP)</a></li>
+</ul>
+{% endblock %}

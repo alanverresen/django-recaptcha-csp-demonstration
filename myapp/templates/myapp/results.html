@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>{% if is_valid %}Success{% else %}Failure{% endif %}</h1>
+<table>
+    <tr>
+        <th>key</th>
+        <th>value</th>
+    </tr>
+    <tr>
+        <td>is valid?</td>
+        <td>{% if is_valid %}yes{% else %}no{% endif %}</td>
+    </tr>
+    {% for key,value in data.items %}
+    <tr>
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{% url 'myapp:index' %}">go back</a>
+{% endblock %}
