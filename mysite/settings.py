@@ -2,6 +2,7 @@ import json
 
 from pathlib import Path
 
+from csp.constants import SELF
 from django.utils.crypto import get_random_string
 
 
@@ -22,6 +23,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "myapp",
     "django_recaptcha",
+    "csp",
 ]
 
 MIDDLEWARE = [
@@ -43,3 +45,10 @@ STATIC_ROOT = BASE_DIR / "static"
 
 # django-recaptcha
 SILENCED_SYSTEM_CHECKS = ['django_recaptcha.recaptcha_test_key_error']
+
+# django-csp
+CONTENT_SECURITY_POLICY = {
+    "DIRECTIVES": {
+        "default-src": [SELF],
+    },
+}
